@@ -29,8 +29,14 @@ export interface useAxiosGetProps {
   limit: number;
 }
 
+export interface iPublishedDate {
+  publishedDate: string;
+  published: string;
+}
+
 export interface iCardProps {
-  article_body: 'string';
-  article_title: 'string';
-  article_image: 'string';
+  body: 'string';
+  title: 'string';
+  image: 'string';
+  publishedAt: 'string';
 }
