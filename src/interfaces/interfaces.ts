@@ -35,8 +35,9 @@ export interface iPublishedDate {
 }
 
 export interface iCardProps {
-  body: 'string';
-  title: 'string';
-  image: 'string';
-  publishedAt: 'string';
+  id: number;
+  body: string;
+  title: string;
+  image: string;
+  publishedAt: string;
 }

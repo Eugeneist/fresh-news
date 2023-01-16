@@ -1,0 +1,11 @@
+.container {
+  width: '60%';
+  height: '100vh';
+  padding: 75px;
+  margin: 'auto';
+
+  &__stack {
+    width: '60%';
+    margin: 'auto';
+  }
+}

@@ -6,10 +6,12 @@ import Box from '@mui/material/Box';
 import { CiCalendar } from 'react-icons/ci';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import styles from './PostCard.module.scss';
+import { NavLink } from 'react-router-dom';
 import { iCardProps } from '../../interfaces/interfaces';
 import { getPublishedDate } from '../../helpers';
 
 const PostCard: React.FC<iCardProps> = ({
+  id,
   body,
   title,
   image,
@@ -40,9 +42,11 @@ const PostCard: React.FC<iCardProps> = ({
               {body.split(' ').slice(0, 20).join(' ') + '...'}
             </Typography>
           </Box>
-          <Button className={styles.card__button}>
-            Read more <ArrowForwardIcon className={styles.card__buttonicon} />
-          </Button>
+          <NavLink className={styles.card__navlink} to={`/article/${id}`}>
+            <Button className={styles.card__button}>
+              Read more <ArrowForwardIcon className={styles.card__buttonicon} />
+            </Button>
+          </NavLink>
         </Box>
       </CardContent>
     </Box>
