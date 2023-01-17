@@ -4,7 +4,22 @@ const getPublishedDate = (published: string): any => {
   let day = date.getDate();
   let year = date.getFullYear();
 
-  let publishedDate: string = `${month} ${day} ${year}`;
+  const nth = function (day: number) {
+    if (day > 3 && day < 21) return 'th';
+    switch (day % 10) {
+      case 1:
+        return 'st';
+      case 2:
+        return 'nd';
+      case 3:
+        return 'rd';
+      default:
+        return 'th';
+    }
+  };
+
+  let publishedDate: string =
+    `${month}` + ' ' + day + nth(day) + ' ' + `${year}`;
 
   return publishedDate;
 };
