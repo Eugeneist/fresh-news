@@ -8,7 +8,7 @@ import { PostCard } from '../PostCard';
 import { Loader } from '../Loader';
 import { Error } from '../Error';
 
-const CardList = () => {
+const CardList: React.FC = () => {
   const { state, isLoading, error }: useAxiosGetProps = useAxiosGet();
   const filteredState = useSelector(
     (state: RootState) => state.filteredReducer,
@@ -26,15 +26,14 @@ const CardList = () => {
     return (
       <Box className={styles.list}>
         {filteredState.map((post: iArticleProps) => (
-          <Box key={post.id}>
-            <PostCard
-              id={post.id}
-              body={post.summary}
-              title={post.title}
-              image={post.imageUrl}
-              publishedAt={post.publishedAt}
-            />
-          </Box>
+          <PostCard
+            key={post.id}
+            id={post.id}
+            body={post.summary}
+            title={post.title}
+            image={post.imageUrl}
+            publishedAt={post.publishedAt}
+          />
         ))}
       </Box>
     );
@@ -43,15 +42,14 @@ const CardList = () => {
   return (
     <Box className={styles.list}>
       {state.map((post: iArticleProps) => (
-        <Box key={post.id}>
-          <PostCard
-            id={post.id}
-            body={post.summary}
-            title={post.title}
-            image={post.imageUrl}
-            publishedAt={post.publishedAt}
-          />
-        </Box>
+        <PostCard
+          key={post.id}
+          id={post.id}
+          body={post.summary}
+          title={post.title}
+          image={post.imageUrl}
+          publishedAt={post.publishedAt}
+        />
       ))}
     </Box>
   );

@@ -7,6 +7,9 @@ import { CiCalendar } from 'react-icons/ci';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import styles from './PostCard.module.scss';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store/store';
+import Highlighter from 'react-highlight-words';
 import { iCardProps } from '../../interfaces/interfaces';
 import { getPublishedDate } from '../../helpers';
 
@@ -17,6 +20,8 @@ const PostCard: React.FC<iCardProps> = ({
   image,
   publishedAt,
 }) => {
+  const inputValues = useSelector((state: RootState) => state.inputReducer);
+
   return (
     <Box className={styles.card} sx={{ maxWidth: 400, p: 0, m: 0 }}>
       <CardMedia
@@ -36,10 +41,18 @@ const PostCard: React.FC<iCardProps> = ({
         <Box className={styles.card__articlebox}>
           <Box className={styles.card__typographybox}>
             <Typography className={styles.card__title}>
-              {title.split(' ').slice(0, 4).join(' ')}
+              <Highlighter
+                searchWords={inputValues}
+                textToHighlight={title.split(' ').slice(0, 4).join(' ')}
+                autoEscape={true}
+              />
             </Typography>
             <Typography className={styles.card__text}>
-              {body.split(' ').slice(0, 20).join(' ') + '...'}
+              <Highlighter
+                searchWords={inputValues}
+                textToHighlight={body.split(' ').slice(0, 20).join(' ') + '...'}
+                autoEscape={true}
+              />
             </Typography>
           </Box>
           <NavLink className={styles.card__navlink} to={`/article/${id}`}>

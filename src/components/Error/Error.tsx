@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import ReplayIcon from '@mui/icons-material/Replay';
 import styles from './Error.module.scss';
 
-const Error = () => {
+const Error: React.FC = () => {
   return (
     <Container className={styles.container} maxWidth="xl">
       <Stack className={styles.container__stack} spacing={2}>

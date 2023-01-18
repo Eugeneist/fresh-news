@@ -1,19 +1,21 @@
+@mixin standard-params {
+  font-size: 16px;
+  font-weight: 600;
+  color: #363636;
+}
+
 .searchbar {
   margin: 0 auto;
   padding: 0 5px 5px 5px;
   max-width: 1290px;
 
   &__title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #363636;
+    @include standard-params;
     padding-bottom: 10px;
   }
 
   &__text {
-    font-size: 16px;
-    font-weight: 600;
-    color: #363636;
+    @include standard-params;
     padding-bottom: 5px;
   }
 
@@ -32,5 +34,15 @@
 
   &__results {
     border-bottom: 1px solid #eaeaea;
+  }
+
+  @media screen and (max-width: 800px) {
+    &__field {
+      width: 300px;
+    }
+
+    &__button {
+      display: none;
+    }
   }
 }
