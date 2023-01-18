@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/single-page-test-app/static/css/main.e55fad27.css",
+    "main.js": "/single-page-test-app/static/js/main.828222f2.js",
+    "index.html": "/single-page-test-app/index.html",
+    "main.e55fad27.css.map": "/single-page-test-app/static/css/main.e55fad27.css.map",
+    "main.828222f2.js.map": "/single-page-test-app/static/js/main.828222f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e55fad27.css",
+    "static/js/main.828222f2.js"
+  ]
+}

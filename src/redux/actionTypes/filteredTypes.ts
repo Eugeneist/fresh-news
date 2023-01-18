@@ -1,1 +1,0 @@
-export const ADD_TO_FILTERED = 'ADD_TO_FILTERED';
