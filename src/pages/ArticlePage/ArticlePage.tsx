@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { RootState } from '../../redux/store/store';
+import { GoToTopButton } from '../../components';
 import styles from './ArticlePage.module.scss';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
@@ -44,13 +45,14 @@ const ArticlePage = () => {
           </Typography>
           <ExampleText />
         </Box>
-        <NavLink className={styles.article__navlink} to={`/`}>
+        <NavLink className={styles.article__navlink} to={`/fresh-news`}>
           <Button className={styles.article__button}>
             <ArrowBackIcon className={styles.article__buttonicon} /> Back to
             homepage
           </Button>
         </NavLink>
       </Box>
+      <GoToTopButton />
     </Container>
   );
 };

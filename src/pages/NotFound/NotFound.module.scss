@@ -1,8 +1,10 @@
 .container {
-  width: '60%';
-  height: '100vh';
+  height: 100vh;
   padding: 75px;
-  margin: 'auto';
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 
   &__button {
     width: 235px;

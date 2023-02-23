@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
+import { Header, Footer } from './components';
 import { HomePage, ArticlePage, NotFound } from './pages';
 
 declare module '@mui/material/styles' {
@@ -27,11 +28,13 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <Header />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/article/:id" element={<ArticlePage />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/fresh-news" element={<HomePage />} />
+        <Route path="/fresh-news/article/:id" element={<ArticlePage />} />
+        <Route path="/fresh-news/*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </ThemeProvider>
   );
 }

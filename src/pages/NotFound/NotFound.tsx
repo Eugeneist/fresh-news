@@ -11,7 +11,7 @@ const NotFound = () => {
       <Alert variant="filled" severity="error">
         Error 404. Not found.
       </Alert>
-      <NavLink className={styles.container__navlink} to={`/`}>
+      <NavLink className={styles.container__navlink} to={`/fresh-news`}>
         <Button className={styles.container__button}>
           <ArrowBackIcon className={styles.container__buttonicon} /> Back to
           homepage

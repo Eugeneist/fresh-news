@@ -55,7 +55,10 @@ const PostCard: React.FC<iCardProps> = ({
               />
             </Typography>
           </Box>
-          <NavLink className={styles.card__navlink} to={`/article/${id}`}>
+          <NavLink
+            className={styles.card__navlink}
+            to={`/fresh-news/article/${id}`}
+          >
             <Button className={styles.card__button}>
               Read more <ArrowForwardIcon className={styles.card__buttonicon} />
             </Button>
