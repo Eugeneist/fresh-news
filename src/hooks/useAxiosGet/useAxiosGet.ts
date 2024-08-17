@@ -16,7 +16,7 @@ const useAxiosGet = () => {
 
   useEffect(() => {
     axios
-      .get(`/v3/articles?_limit=${limit}`)
+      .get(`/v4/articles?_limit=${limit}`)
       .then((data: AxiosResponse) => {
         dispatch(addToPosts(data));
       })
